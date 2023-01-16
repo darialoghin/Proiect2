@@ -1,0 +1,50 @@
+﻿@page
+@model Proiect2.Pages.Manichiuri.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Manichiura</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Manichiura.Culoare" class="control-label"></label>
+                <input asp-for="Manichiura.Culoare" class="form-control" />
+                <span asp-validation-for="Manichiura.Culoare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manichiura.Forma" class="control-label"></label>
+                <input asp-for="Manichiura.Forma" class="form-control" />
+                <span asp-validation-for="Manichiura.Forma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manichiura.Pret" class="control-label"></label>
+                <input asp-for="Manichiura.Pret" class="form-control" />
+                <span asp-validation-for="Manichiura.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manichiura.Desen" class="control-label"></label>
+                <input asp-for="Manichiura.Desen" class="form-control" />
+                <span asp-validation-for="Manichiura.Desen" class="textdanger"></span>
+                </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

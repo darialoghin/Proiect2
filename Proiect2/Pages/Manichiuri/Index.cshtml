@@ -1,0 +1,61 @@
+﻿@page 
+@model Proiect2.Pages.Manichiuri.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Manichiura[0].Culoare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manichiura[0].Forma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manichiura[0].Pret)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manichiura[0].Desen)
+            </th>
+           
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Manichiura) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Culoare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pret)
+            
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desen)
+                </td>
+             
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
